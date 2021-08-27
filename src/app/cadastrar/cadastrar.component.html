@@ -12,40 +12,40 @@
 
                     <div class="form-group">
                         <label for="nome">Nome: </label>
-                        <input class="form-control" type="text" name="nome" id="nome" placeholder="Ex: Zé das couves">
+                        <input [(ngModel)]='userLogin.nome' class="form-control" type="text" name="nome" id="nome" placeholder="Ex: Zé das couves">
                     </div>
 
 
                     <div class="form-group">
                         <label for="email">Email: </label>
-                        <input class="form-control" type="text" name="email" id="email"
-                            placeholder="example@example.com">
+                        <input [(ngModel)]='userLogin.usuario' class="form-control" type="text" name="email" id="email"
+                            placeholder="Ex: example@example.com">
                     </div>
 
 
                     <div class="form-group">
                         <label for="foto">Link da foto: </label>
-                        <input class="form-control" type="text" name="foto" id="foto"
+                        <input [(ngModel)]='userLogin.foto' class="form-control" type="text" name="foto" id="foto"
                             placeholder="http://imgur/example.png">
                     </div>
 
 
                     <div class="form-group">
                         <label for="senha">Senha: </label>
-                        <input class="form-control" type="password" name="senha" id="senha" placeholder="example1234">
+                        <input (input)='confirSenha($event)' class="form-control" type="password" name="senha" id="senha" placeholder="example1234">
                     </div>
 
 
                     <div class="form-group">
                         <label for="ConfSenha">Confirme sua senha: </label>
-                        <input class="form-control" type="password" name="ConfSenha" id="ConfSenha"
+                        <input [(ngModel)]='userLogin.senha' class="form-control" type="password" name="ConfSenha" id="ConfSenha"
                             placeholder="example1234">
                     </div>
 
 
                     <div class="form-group">
                         <label for="foto">Tipo de usuário: </label>
-                        <select class="form-control" name="tipo" id="tipo">
+                        <select class="form-control" name="tipo" id="tipo" (change)='tipoUser($event)'>
                             <option>
                                 Selecione o tipo de usuário
                             </option>
@@ -59,7 +59,7 @@
 
                     <div class="d-flex justify-content-center">
                         <button type="submit" class="btn btn-danger mr-5" routerLink='/entrar'>Cancelar</button>
-                        <button type="submit" class="btn btn-success">Cadastrar</button>
+                        <button type="submit" class="btn btn-success" (click)='cadastrar()'>Cadastrar</button>
                     </div>
 
                 </div>
